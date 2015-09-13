@@ -8,7 +8,7 @@ provide c++-11. The build rules are in cmake. However, it should not be any more
 adding -std=c++-11 to the build rules.  
 
 mkdir build && cd build 
-<p> cmake <path/to/src>  </p>
+<br> cmake <path/to/src>  </br>
 make 
 
 
