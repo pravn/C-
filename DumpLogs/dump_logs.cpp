@@ -53,7 +53,9 @@ void Logs::write_data(const DataObject *t, std::shared_ptr<FileHandler>fileHandl
 }
 
   
-void Logs::DumpLogs::dumpLogs(){
+void Logs::dumpLogs(const DataObject *u){
+
+  const DataObject *data = u;
 
   std::ostringstream dumpStringstream;
   std::string dumpFileString = "dump";

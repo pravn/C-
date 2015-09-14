@@ -44,8 +44,7 @@ int main(int argc, char **argv){
   
   particles.print_keys();
   
-  Logs::DumpLogs dumpLogs(&particles);
-  dumpLogs.dumpLogs();
+  Logs::dumpLogs(&particles);
   
   MPI_Finalize();
   return(0);
