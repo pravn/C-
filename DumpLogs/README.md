@@ -28,7 +28,7 @@ Implementation
 --------------
 1) and 2) can be addressed by handing the print mechanism the data, which the driver program passes 
 around as an object. We then ask the log file name generator (MPI File handler) to create these. The name itself is decided 
-by the print mechanism, and the file name generator's task is only to create these names for each rank. 
+by the print mechanism, and the file name generator's task is only to create these names for each rank. In other words, we want the printing mechanism to call the log file generator, without the latter being a member of the class that it belongs to. 
 
 As mentioned above, we do NOT want any shared membership between the printer and the log file generator. 
 I had a very hard time wrapping my head around this for some reason. We could simply decide that the file handler and print mechanism 
