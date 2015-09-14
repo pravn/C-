@@ -43,7 +43,7 @@ namespace Logs{
 	  
 	  class DumpLogs{
 			 public:	
-	  	  	 	DumpLogs(const class *data){
+	  	  	 	DumpLogs(DataObject *data){
 					       workingData = data; 
 					       		   
 
@@ -56,23 +56,33 @@ namespace Logs{
 					
 
 	  		private: 
-	  	      		 <Some Type, could be class or struct or anything> *workingData;
+				 const DataObject *data;
+				 std::ofstream fout;
+				 
 
-	      	    	  }	  	  
 
-	   MPIFileHandler *fileHandler; //or use smart pointer
-	   <other attributes> 
+	      	    	  }									 //destructor for filehandler created	
+			  //using smart pointers
+				 void delFileHandler(FileHandler *f);
+				 //for vectors, unsused
+				 void delVecFileHandler(FileHandler *f)
+
+		    //Other functions in keeping with the 'loose' coupling (i.e. not enough relationship between components to be 
+		    //included as 'class' members
+		    //but certainly qualify as belonging to a namespace
+
 	   };
 
 
 Client code:
 
        dumpLogImplementation(){
-		fileHandler = new FileHandler(attribs);
 		
-		write out implementation for logging
+		Create smart pointer for MPI file handler (custom destructor in namespace)
+		Each MPI rank will print to a different file, corresponding to its fileHandler.
+		Write out implementation for logging.
 
-		delete fileHandler;
+
 
 		}
 
