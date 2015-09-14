@@ -94,7 +94,7 @@ Driver program (main()):
 
 	The code initializes a number of particles (float3 - x, y, z) in structure of arrays fashion (basically a very primitive imitation of the nbody simulator from NVIDIA's CUDA SDK sample). The idea is to implement a logging system. For each particle, we write out a log file as follows:
 
-"0. x"
+<br> "0. x" </br>
 <br> "1. y" </br>
 <br> "2. z" </br>
 
