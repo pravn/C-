@@ -90,19 +90,17 @@ Clients
 
 
 
-Driver program:
+Driver program (main()):
 
-main():
-
-	The code initializes a number of particles (float3 - x, y, z) in structure of arrays fashion (basically a very primitive imitation of the nbody simulator from NVIDIA's SDK sample). The idea is to implement a logging system. For each particle, we write out a log file as follows:
+	The code initializes a number of particles (float3 - x, y, z) in structure of arrays fashion (basically a very primitive imitation of the nbody simulator from NVIDIA's CUDA SDK sample). The idea is to implement a logging system. For each particle, we write out a log file as follows:
 
 "0. x"
-"1. y"
-"2. z"
+<br> "1. y" </br>
+<br> "2. z" </br>
 
-<x value for particle 0>   < y value for particle 0> <z value for particle 0>
-<x value for particle 1>   <y value for particle 1> <z value for particle 1>
-<x value for particle 2>   <y value for particle 2> <z value for particle 2>
+<br> "x value for particle 0"    "y value for particle 0"    "z value for particle 0" </br>
+<br> "x value for particle 1"    "y value for particle 1"    "z value for particle 1" </br>
+<br> "x value for particle 2"    "y value for particle 2"    "z value for particle 2" </br>
 and so on.
 
 This is done for each MPI rank, which then writes out a file with a _rank appended to it.
