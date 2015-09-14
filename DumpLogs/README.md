@@ -74,8 +74,10 @@ namespace Logs{
 	   };
 
 
-Client code:
+Clients
+-------
 
+ Subclient
        dumpLogImplementation(){
 		
 		Create smart pointer for MPI file handler (custom destructor in namespace)
@@ -88,7 +90,32 @@ Client code:
 
 
 
-		
+Driver program:
+
+main():
+
+	The code initializes a number of particles (float3 - x, y, z) in structure of arrays fashion (basically a very primitive imitation of the nbody simulator from NVIDIA's SDK sample). The idea is to implement a logging system. For each particle, we write out a log file as follows:
+
+"0. x"
+"1. y"
+"2. z"
+
+<x value for particle 0>   < y value for particle 0> <z value for particle 0>
+<x value for particle 1>   <y value for particle 1> <z value for particle 1>
+<x value for particle 2>   <y value for particle 2> <z value for particle 2>
+and so on.
+
+This is done for each MPI rank, which then writes out a file with a _rank appended to it.
+
+Ancillary use cases include 'vector' and 'map'. In subsequent posts, I hope to create some examples for the STL and templatization. 
+We could use templates to extend the functionality of our code to handle both single and double precision arithmatic.
+
+
+
+
+			
+
+	
 		
 		
 
